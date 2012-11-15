@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Games"
+            id="pl.troken.ecliballs">
+      </category>
+      <view
+            name="EcliBalls"
+            icon="/images/ball/ball_blueS.gif"
+            category="pl.troken.ecliballs"
+            class="pl.troken.ecliballs.ui.view.BallsView"
+            id="pl.troken.ecliballs.view.BallsView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="pl.troken.ecliballs.view.BallsView"
+               minimized="true"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="pl.troken.ecliballs.ui.preferences.EcliBallsPreferencePage"
+            id="pl.troken.ecliballs.ui.preferences.EcliBallsPreferencePage"
+            name="EcliBalls">
+         <keywordReference
+               id="pl.troken.ecliballs.keyword">
+         </keywordReference>
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="pl.troken.ecliballs.ui.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         id="pl.troken.ecliballs.keyword"
+         name="balls"
+         point="org.eclipse.ui.keywords">
+      <keyword
+            id="pl.troken.ecliballs.keyword"
+            label="balls">
+      </keyword>
+   </extension>
+
+</plugin>

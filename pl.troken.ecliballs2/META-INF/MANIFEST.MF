@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ecliballs
+Bundle-SymbolicName: pl.troken.ecliballs; singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: pl.troken.ecliballs.EcliBallsPlugin
+Bundle-Vendor: Wojciech Trocki
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.common;bundle-version="2.6.0",
+ org.eclipse.emf;bundle-version="2.6.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.5.0",
+ org.eclipse.core.resources;bundle-version="3.6.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.impl,
+ org.eclipse.emf.ecore.plugin
+Export-Package: pl.troken.ecliballs.model.ecliballs,
+ pl.troken.ecliballs.model.ecliballs.util

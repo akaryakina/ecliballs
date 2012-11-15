@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/pl.troken.ecliballs/src"
+    modelPluginID="pl.troken.ecliballs" modelName="Ecliballs" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0">
+  <foreignModel>eballing.ecore</foreignModel>
+  <genPackages prefix="Ecliballs" basePackage="pl.troken.ecliballs.model" disposableProviderFactory="true"
+      ecorePackage="eballing.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eballing.ecore#//Status">
+      <genEnumLiterals ecoreEnumLiteral="eballing.ecore#//Status/SELECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="eballing.ecore#//Status/READY"/>
+    </genEnums>
+    <genClasses ecoreClass="eballing.ecore#//Board">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eballing.ecore#//Board/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eballing.ecore#//Board/selectedField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eballing.ecore#//Board/status"/>
+      <genOperations ecoreOperation="eballing.ecore#//Board/init"/>
+      <genOperations ecoreOperation="eballing.ecore#//Board/clear"/>
+      <genOperations ecoreOperation="eballing.ecore#//Board/setRandomFigureInField">
+        <genParameters ecoreParameter="eballing.ecore#//Board/setRandomFigureInField/field"/>
+      </genOperations>
+      <genOperations ecoreOperation="eballing.ecore#//Board/isFieldEmpty">
+        <genParameters ecoreParameter="eballing.ecore#//Board/isFieldEmpty/field"/>
+      </genOperations>
+      <genOperations ecoreOperation="eballing.ecore#//Board/moveFigureToField">
+        <genParameters ecoreParameter="eballing.ecore#//Board/moveFigureToField/field"/>
+      </genOperations>
+      <genOperations ecoreOperation="eballing.ecore#//Board/getField">
+        <genParameters ecoreParameter="eballing.ecore#//Board/getField/position"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="eballing.ecore#//Figure">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eballing.ecore#//Figure/Figure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eballing.ecore#//Figure/figureType"/>
+    </genClasses>
+    <genClasses ecoreClass="eballing.ecore#//Field">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eballing.ecore#//Field/figure"/>
+      <genOperations ecoreOperation="eballing.ecore#//Field/hasFigure"/>
+      <genOperations ecoreOperation="eballing.ecore#//Field/removeFigure"/>
+    </genClasses>
+    <genClasses ecoreClass="eballing.ecore#//FigureTypes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eballing.ecore#//FigureTypes/figureTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eballing.ecore#//FigureTypes/EReference0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eballing.ecore#//FigureTypes/figureType"/>
+      <genOperations ecoreOperation="eballing.ecore#//FigureTypes/addFigureType"/>
+    </genClasses>
+    <genClasses ecoreClass="eballing.ecore#//FigureType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eballing.ecore#//FigureType/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eballing.ecore#//FigureType/figureType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eballing.ecore#//FigureType/EReference0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eballing.ecore#//FigureType/EReference1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eballing.ecore#//FigureType/EReference2"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
