@@ -1,4 +1,4 @@
 ecliballs
 =========
 
-Ecliballs Eclipse Plugin
+Ecliballs Eclipse Plugin 
